@@ -45,19 +45,20 @@ struct ContentView: View {
     
     var body: some View {
         
-        
         displayFlashcards()
-        
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
-        
+    
+    
 
     func displayFlashcards () -> some View {
         
-        
+        //loop to display per id and key
         ForEach(Array(vocab), id: \.key){ key, value in
-            GroupBox(label: Text("Vocab Flashcard") .padding(.bottom, 50)
+            
+            GroupBox(label: Text("Vocab Flashcard") .padding(.bottom, 50) //the actual box
             ){
-                //flashcard contents
+                //flashcard contents written inside of it
                 VStack (spacing: 40){
                     Text(key)
                     Text(value)
@@ -69,6 +70,7 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
             .background(Color.gray)
+            
         }
     }
         
