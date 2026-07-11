@@ -10,72 +10,103 @@ import AVFoundation
 
 struct ContentView: View {
     
+    @State var currentIndex: Int = 0
+    
     //instance declared here to be reusable
     let synthesizer = AVSpeechSynthesizer()
     
-
-    var vocab = [
-          "Hola": "Hello",
-          "Adiós": "Goodbye",
-          "Gracias": "Thank you",
-          "Por favor": "Please",
-          "Sí": "Yes",
-          "No": "No",
-          "Buenos días": "Good morning",
-          "Buenas noches": "Good night",
-          "¿Cómo estás?": "How are you?",
-          "Bien": "Good/Well",
-          "Mal": "Bad/Badly",
-          "Yo": "I/Me",
-          "Tú": "You",
-          "Nosotros": "We/Us",
-          "Agua": "Water",
-          "Comida": "Food",
-          "Casa": "House/Home",
-          "Amigo": "Friend",
-          "Familia": "Family",
-          "Trabajo": "Work/Job",
-          "Dinero": "Money",
-          "Tiempo": "Time",
-          "Mucho": "Much/A lot",
-          "Poco": "Little/Few",
-          "Grande": "Big/Large",
-          "Pequeño": "Small"
-      ]
-    
-    var body: some View {
-        
-        displayFlashcards()
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+    struct vocabCard {
+        let spanish: String
+        let english: String
     }
     
+    var vocabArray: [vocabCard] = [
+        vocabCard(spanish: "Hola", english: "Hello"),
+        vocabCard(spanish: "Adiós", english: "Goodbye"),
+        vocabCard(spanish: "Gracias", english: "Thank you"),
+        vocabCard(spanish: "Por favor", english: "Please"),
+        vocabCard(spanish: "Sí", english: "Yes"),
+        vocabCard(spanish: "No", english: "No"),
+        vocabCard(spanish: "Buenos días", english: "Good morning"),
+        vocabCard(spanish: "Buenas noches", english: "Good night"),
+        vocabCard(spanish: "¿Cómo estás?", english: "How are you?"),
+        vocabCard(spanish: "Bien", english: "Good/Well"),
+        vocabCard(spanish: "Mal", english: "Bad/Badly"),
+        vocabCard(spanish: "Yo", english: "I/Me"),
+        vocabCard(spanish: "Tú", english: "You"),
+        vocabCard(spanish: "Nosotros", english: "We/Us"),
+        vocabCard(spanish: "Agua", english: "Water"),
+        vocabCard(spanish: "Comida", english: "Food"),
+        vocabCard(spanish: "Casa", english: "House/Home"),
+        vocabCard(spanish: "Amigo", english: "Friend"),
+        vocabCard(spanish: "Familia", english: "Family"),
+        vocabCard(spanish: "Trabajo", english: "Work/Job"),
+        vocabCard(spanish: "Dinero", english: "Money"),
+        vocabCard(spanish: "Tiempo", english: "Time"),
+        vocabCard(spanish: "Mucho", english: "Much/A lot"),
+        vocabCard(spanish: "Poco", english: "Little/Few"),
+        vocabCard(spanish: "Grande", english: "Big/Large"),
+        vocabCard(spanish: "Pequeño", english: "Small"),
+    ]
+    
+    var body: some View {
+            displayFlashcards()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+    }
     
 
     func displayFlashcards () -> some View {
-        
-        //loop to display per id and key
-        ForEach(Array(vocab), id: \.key){ key, value in
-            
-            GroupBox(label: Text("Vocab Flashcard") .padding(.bottom, 50) //the actual box
-            ){
-                //flashcard contents written inside of it
-                VStack (spacing: 40){
-                    Text(key)
-                    Text(value)
-                    Button("Speak", action: { speak(word: key)})
+    
+        return HStack{
+            //the actual container
+            GroupBox(label: Text("Vocab Flashcard")){
+                
+                var currentSpanishWord: String = vocabArray[currentIndex].spanish
+                
+                //content inside of the container
+                VStack(spacing: 20){
+                    Text(vocabArray[currentIndex].spanish)
+                    Text(vocabArray[currentIndex].english)
+                    Button("Pronunciation", action: { speak(word: currentSpanishWord) })
                 }
                 
             }
-            .frame(width:300, height:300)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
-            .background(Color.gray)
+            .padding(.vertical, 100)
+            .frame(maxWidth: 300, maxHeight: 300)
             
+            
+            //logic for next flashcard with arrows
+            Button{
+                if currentIndex == 0 {
+                    print("You cannot go further back this is the first Flashcard")
+                    return
+                }
+                currentIndex -= 1
+                
+            } label:{
+                Image(systemName: "arrow.left.circle")
+            }
+            
+            Button{ 
+                print(currentIndex, "This is the actual current Index")
+                if currentIndex >= vocabArray.count - 1{
+                    print("You cannot go further forward you have reached the end of the Flashcard")
+                    return
+                }
+                else {
+                    currentIndex += 1
+                    print(currentIndex, "This is the index update")
+                }
+                
+            } label: {
+                Image(systemName: "arrow.right.circle")
+            }
         }
     }
-        
+    
     
     //for speaking the word and using the library
+    @MainActor
     func speak (word: String) {
         let utterance = AVSpeechUtterance(string: word)
         synthesizer.speak(utterance)
