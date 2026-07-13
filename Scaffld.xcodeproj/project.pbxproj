@@ -13,7 +13,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		047AAE192F14B7D0004B49CE /* Scaffld */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Scaffld;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
