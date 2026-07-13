@@ -57,7 +57,7 @@ struct ContentView: View {
 
     func displayFlashcards () -> some View {
     
-        return HStack{
+        return VStack{
             //the actual container
             GroupBox(label: Text("Vocab Flashcard")){
                 
@@ -75,33 +75,40 @@ struct ContentView: View {
             .frame(maxWidth: 300, maxHeight: 300)
             
             
-            //logic for next flashcard with arrows
-            Button{
-                if currentIndex == 0 {
-                    print("You cannot go further back this is the first Flashcard")
-                    return
+            //logic for next and previous flashcard with arrows
+            HStack{
+                Button{
+                    if currentIndex == 0 {
+                        //for debugging remove later
+                        print("You cannot go further back this is the first Flashcard")
+                        return
+                    }
+                    currentIndex -= 1
+                    
+                } label:{
+                    Image(systemName: "arrow.left.circle")
                 }
-                currentIndex -= 1
                 
-            } label:{
-                Image(systemName: "arrow.left.circle")
+                Button{
+                    //for debugging remove later
+                    print(currentIndex, "This is the actual current Index")
+                    if currentIndex >= vocabArray.count - 1{
+                        Text("You have reached the end of the Flashcards")
+                        return
+                    }
+                    else {
+                        currentIndex += 1
+                        print(currentIndex, "This is the index update")
+                    }
+                    
+                } label: {
+                    Image(systemName: "arrow.right.circle")
+                }
             }
             
-            Button{ 
-                print(currentIndex, "This is the actual current Index")
-                if currentIndex >= vocabArray.count - 1{
-                    print("You cannot go further forward you have reached the end of the Flashcard")
-                    return
-                }
-                else {
-                    currentIndex += 1
-                    print(currentIndex, "This is the index update")
-                }
-                
-            } label: {
-                Image(systemName: "arrow.right.circle")
-            }
+            
         }
+            
     }
     
     
