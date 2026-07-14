@@ -15,38 +15,33 @@ struct ContentView: View {
     //instance declared here to be reusable
     let synthesizer = AVSpeechSynthesizer()
     
-    struct vocabCard {
-        let spanish: String
-        let english: String
-    }
-    
-    var vocabArray: [vocabCard] = [
-        vocabCard(spanish: "Hola", english: "Hello"),
-        vocabCard(spanish: "Adiós", english: "Goodbye"),
-        vocabCard(spanish: "Gracias", english: "Thank you"),
-        vocabCard(spanish: "Por favor", english: "Please"),
-        vocabCard(spanish: "Sí", english: "Yes"),
-        vocabCard(spanish: "No", english: "No"),
-        vocabCard(spanish: "Buenos días", english: "Good morning"),
-        vocabCard(spanish: "Buenas noches", english: "Good night"),
-        vocabCard(spanish: "¿Cómo estás?", english: "How are you?"),
-        vocabCard(spanish: "Bien", english: "Good/Well"),
-        vocabCard(spanish: "Mal", english: "Bad/Badly"),
-        vocabCard(spanish: "Yo", english: "I/Me"),
-        vocabCard(spanish: "Tú", english: "You"),
-        vocabCard(spanish: "Nosotros", english: "We/Us"),
-        vocabCard(spanish: "Agua", english: "Water"),
-        vocabCard(spanish: "Comida", english: "Food"),
-        vocabCard(spanish: "Casa", english: "House/Home"),
-        vocabCard(spanish: "Amigo", english: "Friend"),
-        vocabCard(spanish: "Familia", english: "Family"),
-        vocabCard(spanish: "Trabajo", english: "Work/Job"),
-        vocabCard(spanish: "Dinero", english: "Money"),
-        vocabCard(spanish: "Tiempo", english: "Time"),
-        vocabCard(spanish: "Mucho", english: "Much/A lot"),
-        vocabCard(spanish: "Poco", english: "Little/Few"),
-        vocabCard(spanish: "Grande", english: "Big/Large"),
-        vocabCard(spanish: "Pequeño", english: "Small"),
+    var vocabArray: [VocabCard] = [
+        VocabCard(spanish: "Hola", english: "Hello"),
+        VocabCard(spanish: "Adiós", english: "Goodbye"),
+        VocabCard(spanish: "Gracias", english: "Thank you"),
+        VocabCard(spanish: "Por favor", english: "Please"),
+        VocabCard(spanish: "Sí", english: "Yes"),
+        VocabCard(spanish: "No", english: "No"),
+        VocabCard(spanish: "Buenos días", english: "Good morning"),
+        VocabCard(spanish: "Buenas noches", english: "Good night"),
+        VocabCard(spanish: "¿Cómo estás?", english: "How are you?"),
+        VocabCard(spanish: "Bien", english: "Good/Well"),
+        VocabCard(spanish: "Mal", english: "Bad/Badly"),
+        VocabCard(spanish: "Yo", english: "I/Me"),
+        VocabCard(spanish: "Tú", english: "You"),
+        VocabCard(spanish: "Nosotros", english: "We/Us"),
+        VocabCard(spanish: "Agua", english: "Water"),
+        VocabCard(spanish: "Comida", english: "Food"),
+        VocabCard(spanish: "Casa", english: "House/Home"),
+        VocabCard(spanish: "Amigo", english: "Friend"),
+        VocabCard(spanish: "Familia", english: "Family"),
+        VocabCard(spanish: "Trabajo", english: "Work/Job"),
+        VocabCard(spanish: "Dinero", english: "Money"),
+        VocabCard(spanish: "Tiempo", english: "Time"),
+        VocabCard(spanish: "Mucho", english: "Much/A lot"),
+        VocabCard(spanish: "Poco", english: "Little/Few"),
+        VocabCard(spanish: "Grande", english: "Big/Large"),
+        VocabCard(spanish: "Pequeño", english: "Small"),
     ]
     
     var body: some View {

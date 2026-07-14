@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		04395A8B30054BA200A8B304 /* Scaffld.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Scaffld.xcodeproj; sourceTree = "<group>"; };
 		047AAE172F14B7D0004B49CE /* Scaffld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scaffld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		047AAE192F14B7D0004B49CE /* Scaffld */ = {
+		047AAE192F14B7D0004B49CE /* . */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = .;
 			sourceTree = "<group>";
@@ -29,10 +30,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04395A8D30054BA200A8B304 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		047AAE0E2F14B7D0004B49CE = {
 			isa = PBXGroup;
 			children = (
-				047AAE192F14B7D0004B49CE /* Scaffld */,
+				047AAE192F14B7D0004B49CE /* . */,
 				047AAE182F14B7D0004B49CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +67,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				047AAE192F14B7D0004B49CE /* Scaffld */,
+				047AAE192F14B7D0004B49CE /* . */,
 			);
 			name = Scaffld;
 			packageProductDependencies = (
@@ -97,6 +103,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 047AAE182F14B7D0004B49CE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 04395A8D30054BA200A8B304 /* Products */;
+					ProjectRef = 04395A8B30054BA200A8B304 /* Scaffld.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				047AAE162F14B7D0004B49CE /* Scaffld */,
