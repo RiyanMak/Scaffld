@@ -6,6 +6,5 @@
 //
 
 struct User {
-    let 
-
+    let name: String
 }

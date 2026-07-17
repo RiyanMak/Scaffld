@@ -6,15 +6,69 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		04395A9030054BA200A8B304 /* ScaffldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04395A8C30054BA200A8B304 /* ScaffldApp.swift */; };
+		04395A9230054BA200A8B304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04395A8930054BA200A8B304 /* Assets.xcassets */; };
+		04395AA33006905B00A8B304 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 04395AA23006905B00A8B304 /* CLAUDE.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		04395A8930054BA200A8B304 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04395A8B30054BA200A8B304 /* Scaffld.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Scaffld.xcodeproj; sourceTree = "<group>"; };
+		04395A8C30054BA200A8B304 /* ScaffldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaffldApp.swift; sourceTree = "<group>"; };
+		04395AA23006905B00A8B304 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		04395AC5300AB67600A8B304 /* Scaffld.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Scaffld.xcodeproj; sourceTree = "<group>"; };
 		047AAE172F14B7D0004B49CE /* Scaffld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scaffld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		04395AB6300AB67000A8B304 /* Exceptions for ".claude" folder in "Scaffld" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				settings.local.json,
+			);
+			target = 047AAE162F14B7D0004B49CE /* Scaffld */;
+		};
+		04395AB7300AB67000A8B304 /* Exceptions for "Views" folder in "Scaffld" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Flashcards/ContentView.swift,
+				Home/Homepage.swift,
+			);
+			target = 047AAE162F14B7D0004B49CE /* Scaffld */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		04395AA7300AB66F00A8B304 /* .claude */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				04395AB6300AB67000A8B304 /* Exceptions for ".claude" folder in "Scaffld" target */,
+			);
+			path = .claude;
+			sourceTree = "<group>";
+		};
+		04395AAA300AB66F00A8B304 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04395AAB300AB66F00A8B304 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		04395AB0300AB66F00A8B304 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				04395AB7300AB67000A8B304 /* Exceptions for "Views" folder in "Scaffld" target */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		047AAE192F14B7D0004B49CE /* . */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = .;
+			name = .;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -30,7 +84,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04395A8D30054BA200A8B304 /* Products */ = {
+		04395AC7300AB67600A8B304 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -40,6 +94,14 @@
 			children = (
 				047AAE192F14B7D0004B49CE /* . */,
 				047AAE182F14B7D0004B49CE /* Products */,
+				04395AA7300AB66F00A8B304 /* .claude */,
+				04395AAA300AB66F00A8B304 /* Models */,
+				04395AAB300AB66F00A8B304 /* Services */,
+				04395AB0300AB66F00A8B304 /* Views */,
+				04395A8930054BA200A8B304 /* Assets.xcassets */,
+				04395AA23006905B00A8B304 /* CLAUDE.md */,
+				04395A8B30054BA200A8B304 /* Scaffld.xcodeproj */,
+				04395A8C30054BA200A8B304 /* ScaffldApp.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +129,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				04395AAA300AB66F00A8B304 /* Models */,
 				047AAE192F14B7D0004B49CE /* . */,
 			);
 			name = Scaffld;
@@ -105,8 +168,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 04395A8D30054BA200A8B304 /* Products */;
-					ProjectRef = 04395A8B30054BA200A8B304 /* Scaffld.xcodeproj */;
+					ProductGroup = 04395AC7300AB67600A8B304 /* Products */;
+					ProjectRef = 04395AC5300AB67600A8B304 /* Scaffld.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -121,6 +184,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04395A9230054BA200A8B304 /* Assets.xcassets in Resources */,
+				04395AA33006905B00A8B304 /* CLAUDE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04395A9030054BA200A8B304 /* ScaffldApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
