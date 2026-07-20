@@ -35,9 +35,9 @@ struct HomepageView: View {
                             Text("6 of 12 words learned")
                             
                             ProgressBarView(progress: 0.60)
+                                .padding(.bottom)
+                            ContinueLessonButton(size: 10)
                             
-                            
-                                
                             
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)

@@ -31,6 +31,7 @@
 		04395AB7300AB67000A8B304 /* Exceptions for "Views" folder in "Scaffld" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Components/ContinueLessonButton.swift,
 				Components/ProgressBarView.swift,
 				Flashcards/ContentView.swift,
 				Home/Homepage.swift,
