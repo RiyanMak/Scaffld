@@ -31,7 +31,13 @@ struct HomepageView: View {
                             //render the lesson where you left off
                             Text("Lesson 3 · Family & People")
                                 .font(.system(size:20))
+                                .padding(.top, 3)
                             Text("6 of 12 words learned")
+                            
+                            ProgressBarView(progress: 0.60)
+                            
+                            
+                                
                             
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)

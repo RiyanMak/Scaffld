@@ -17,7 +17,6 @@
 		04395A8B30054BA200A8B304 /* Scaffld.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Scaffld.xcodeproj; sourceTree = "<group>"; };
 		04395A8C30054BA200A8B304 /* ScaffldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaffldApp.swift; sourceTree = "<group>"; };
 		04395AA23006905B00A8B304 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
-		04395AC5300AB67600A8B304 /* Scaffld.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Scaffld.xcodeproj; sourceTree = "<group>"; };
 		047AAE172F14B7D0004B49CE /* Scaffld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scaffld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +31,7 @@
 		04395AB7300AB67000A8B304 /* Exceptions for "Views" folder in "Scaffld" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Components/ProgressBarView.swift,
 				Flashcards/ContentView.swift,
 				Home/Homepage.swift,
 			);
@@ -66,11 +66,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		047AAE192F14B7D0004B49CE /* . */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			name = .;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +79,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04395AC7300AB67600A8B304 /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
 		047AAE0E2F14B7D0004B49CE = {
 			isa = PBXGroup;
 			children = (
-				047AAE192F14B7D0004B49CE /* . */,
 				047AAE182F14B7D0004B49CE /* Products */,
 				04395AA7300AB66F00A8B304 /* .claude */,
 				04395AAA300AB66F00A8B304 /* Models */,
@@ -130,7 +119,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				04395AAA300AB66F00A8B304 /* Models */,
-				047AAE192F14B7D0004B49CE /* . */,
 			);
 			name = Scaffld;
 			packageProductDependencies = (
@@ -166,12 +154,6 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 047AAE182F14B7D0004B49CE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 04395AC7300AB67600A8B304 /* Products */;
-					ProjectRef = 04395AC5300AB67600A8B304 /* Scaffld.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				047AAE162F14B7D0004B49CE /* Scaffld */,
