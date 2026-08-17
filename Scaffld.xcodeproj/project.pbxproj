@@ -35,6 +35,7 @@
 				Components/ProgressBarView.swift,
 				Flashcards/ContentView.swift,
 				Home/Homepage.swift,
+				Home/LessonPage.swift,
 			);
 			target = 047AAE162F14B7D0004B49CE /* Scaffld */;
 		};
@@ -103,6 +104,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		04F6741130114B0500102E04 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +161,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 047AAE182F14B7D0004B49CE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 04F6741130114B0500102E04 /* Products */;
+					ProjectRef = 04395A8B30054BA200A8B304 /* Scaffld.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				047AAE162F14B7D0004B49CE /* Scaffld */,

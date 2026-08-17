@@ -10,9 +10,13 @@ import SwiftUI
 struct ContinueLessonButton: View {
     
     let size: Double
+    var action: () -> Void
     
     var body: some View {
         Text("Continue lesson →")
+            .onTapGesture {
+                action()
+            }
             .background(
                 RoundedRectangle(cornerRadius: size)
                     .fill(.yellow)
