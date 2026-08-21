@@ -12,68 +12,58 @@ struct HomepageView: View {
     @State private var path = NavigationPath()
     
     var body: some View {
-        
-        NavigationStack(path: $path){
+                
+            NavigationStack(path: $path){
             
-            //all the page contents will go here
-            ScrollView(.vertical){
-                
-                Text("Hola, Riyan")
-                    .frame(maxWidth: 380, maxHeight: 50, alignment: .topLeading)
-                    .font(.system(size: 30))
-                    .fontWeight(.bold)
-                
-                
-                VStack(alignment: .leading){
+                //all the page contents will go here
+                ScrollView(.vertical){
                     
-                    //Groupbox for the Where you left off
-                    GroupBox(label: Text("CONTINUE WHERE YOU LEFT OFF")
-                        .font(.system(size: 15))
-                        .fontWeight(.bold)){
+                        Text("Hola, Riyan")
+                            .frame(maxWidth: 380, maxHeight: 80, alignment: .topLeading)
+                            .font(.custom("Newsreader14pt-SemiBold", size: 35))
+                            .padding(.top, 20)
+                            .padding(.leading, 20)
+                        Text("Day 3 · Spanish")
+                            .frame(maxWidth: 380, maxHeight: 80, alignment: .leading)
+                            .font(.custom("Newsreader14pt-Regular", size: 15))
+                            .padding(.leading, 20)
+                    
                         
-                            
+                        GroupBox{
                             VStack(alignment: .leading){
-                                //render the lesson where you left off
-                                Text("Lesson 3 · Family & People")
-                                    .font(.system(size:20))
-                                    .padding(.top, 3)
-                                Text("6 of 12 words learned")
-                                
-                                ProgressBarView(progress: 0.60)
-                                    .padding(.bottom, 8)
-                                ContinueLessonButton(size: 10, action: {
-                                    path.append("lesson3")
-                                })
-                                
-                                
+                                Text("CONTINUE WHERE YOU LEFT OFF")
+                                    .font(.system(size: 10, weight: .semibold))
+                                    .tracking(1.4)
+                                    .foregroundStyle(.inkFaint)
+                                    .padding(.bottom, 4)
+                                Text("Greetings")
+                                    .font(.custom("Newsreader14pt-Medium", size: 25))
+                                    .fontWeight(.medium)
+                                    .foregroundStyle(.ink)
+                                    .padding(.bottom, 2)
+                                Text("2 of 4 words learned")
+                                    .font(.custom("Newsreader14pt-Regular", size:15))
+                                    .fontWeight(.regular)
+                                    .foregroundStyle(.inkMuted)
+                                    
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                    }
-                    .frame(width: 380, alignment: .top)
-                    
-                    //Groupbox for the Where you left off
-                    GroupBox(label: Text("CONTINUE WHERE YOU LEFT OFF")
-                        .font(.system(size: 15))
-                        .fontWeight(.bold)){
-                    }
-                    .frame(width: 380, alignment: .leading)
-                    
+                        }
+                        .frame(maxWidth: 360)
+                        .backgroundStyle(Color.surface)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.cardBorder, lineWidth: 2)
+                        )
             
-
+                    }
+                    .background(Color.paper.ignoresSafeArea())
+                    .navigationDestination(for: String.self) { currentLesson in LessonPageView(lessonId: currentLesson)}
+                
                 }
-                .frame(maxWidth:.infinity, maxHeight:.infinity)
-
-
-                }
-            .navigationDestination(for: String.self) { currentLesson in
-                LessonPageView(lessonId: currentLesson)
-            }
-            
-            }
-
 
         }
+
     }
 
 
