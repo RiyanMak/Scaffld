@@ -18,9 +18,9 @@ struct HomepageView: View {
             //all the page contents will go here
             ScrollView(.vertical){
                 
-                Text("Hi, Riyan")
+                Text("Hola, Riyan")
                     .frame(maxWidth: 380, maxHeight: 50, alignment: .topLeading)
-                    .font(.system(size: 35))
+                    .font(.system(size: 30))
                     .fontWeight(.bold)
                 
                 
@@ -51,6 +51,14 @@ struct HomepageView: View {
                         
                     }
                     .frame(width: 380, alignment: .top)
+                    
+                    //Groupbox for the Where you left off
+                    GroupBox(label: Text("CONTINUE WHERE YOU LEFT OFF")
+                        .font(.system(size: 15))
+                        .fontWeight(.bold)){
+                    }
+                    .frame(width: 380, alignment: .leading)
+                    
             
 
                 }

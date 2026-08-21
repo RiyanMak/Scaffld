@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import UIKit
 
 @main
 struct ScaffldApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .background(Color(.systemBackground))
+
             HomepageView()
+                .background(Color(.systemBackground))
+
 
         }
+        
+        
+
     }
 }
