@@ -18,6 +18,7 @@
 		04395A8C30054BA200A8B304 /* ScaffldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaffldApp.swift; sourceTree = "<group>"; };
 		04395AA23006905B00A8B304 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		045F3FA030381AAC007CB51D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.plist; sourceTree = "<group>"; };
+		045F3FA2303820A3007CB51D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .gitignore; sourceTree = "<group>"; };
 		047AAE172F14B7D0004B49CE /* Scaffld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scaffld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +77,7 @@
 		047AAE0E2F14B7D0004B49CE = {
 			isa = PBXGroup;
 			children = (
+				045F3FA2303820A3007CB51D /* .gitignore */,
 				045F3FA030381AAC007CB51D /* Info.plist */,
 				045F3F9430380287007CB51D /* Resources */,
 				047AAE182F14B7D0004B49CE /* Products */,
