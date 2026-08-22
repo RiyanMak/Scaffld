@@ -27,6 +27,7 @@ struct HomepageView: View {
                             .frame(maxWidth: 380, maxHeight: 80, alignment: .leading)
                             .font(.custom("Newsreader14pt-Regular", size: 15))
                             .padding(.leading, 20)
+                            .padding(.bottom, 20)
                     
                         
                         GroupBox{
@@ -45,11 +46,14 @@ struct HomepageView: View {
                                     .font(.custom("Newsreader14pt-Regular", size:15))
                                     .fontWeight(.regular)
                                     .foregroundStyle(.inkMuted)
-                                    
+                                ProgressBarView(progress:0.5)
+                                    .padding(.bottom, 4)
+                                ContinueLessonButton() {}
+                
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         }
-                        .frame(maxWidth: 360)
+                        .frame(maxWidth: 360, maxHeight: 220)
                         .backgroundStyle(Color.surface)
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)

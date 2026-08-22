@@ -9,22 +9,29 @@ import SwiftUI
 
 struct ContinueLessonButton: View {
     
-    let size: Double
     var action: () -> Void
     
     var body: some View {
-        Text("Continue lesson →")
-            .onTapGesture {
-                action()
-            }
-            .background(
-                RoundedRectangle(cornerRadius: size)
-                    .fill(.yellow)
-                    .frame(width: 160, height: 40)
-            )
-            .padding(.leading, 10)
-            .fontWeight(.bold)
+        
+        GroupBox {
+            Text("Continue lesson →")
+                .font(.custom("Newsreader14pt-Medium", size:17))
+                .fontWeight(.medium)
+                .frame(maxWidth:.infinity)
+                .foregroundStyle(Color("ButtonLabel"))
+                .onTapGesture {
+                    action()
+                }
+                
+        }
+        .backgroundStyle(Color.buttonFill)
+        .frame(width: 300, height: 80)
+
     }
+        
     
 }
 
+#Preview {
+    ContinueLessonButton() {}
+}
