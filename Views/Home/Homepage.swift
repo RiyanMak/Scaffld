@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum Screen: Hashable {
+    case LessonPageView
+    case HomePageView
+}
+
 struct HomepageView: View {
     
     @State private var path = NavigationPath()
@@ -53,7 +58,7 @@ struct HomepageView: View {
                                 .foregroundStyle(.inkMuted)
                             ProgressBarView(progress:0.5)
                                 .padding(.bottom, 4)
-                            ContinueLessonButton() {}
+                            ContinueLessonButton{path.append(Screen.LessonPageView)}
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     }
@@ -74,20 +79,21 @@ struct HomepageView: View {
                         .foregroundStyle(.inkFaint)
                     
                     VStack(alignment: .leading) {
+                        
                         HStack{
-                            LessonNumber(lessonNumber: 1, isLocked: false)
+                            LessonNumber(lessonNumber: 1)
                             VStack (alignment: .leading) {
                                 Text("Greetings")
                                     .font(.custom("Newsreader14pt-Medium", size: 20))
                                     .fontWeight(.medium)
                                     .foregroundStyle(.ink)
                                 
-                                Text(isLocked ? "Locked": "In Progress")
+                                Text(isLocked ? "Locked" : "In progress")
                                     .font(.custom("Newsreader14pt-Regular", size:15))
                                     .fontWeight(.regular)
                                     .foregroundStyle(.inkMuted)
                             }
-                            .frame(maxWidth: 100, maxHeight: 100)
+                            .frame(maxHeight:100)
                             
                             Spacer()
                             
