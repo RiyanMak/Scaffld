@@ -8,11 +8,11 @@
 import SwiftUI
 
 enum Screen: Hashable {
-    case LessonPageView
-    case HomePageView
+    case LessonPage
+    case HomePage
 }
 
-struct HomepageView: View {
+struct Homepage: View {
     
     @State private var path = NavigationPath()
     @State private var lessonNumber: Int = 0
@@ -58,7 +58,7 @@ struct HomepageView: View {
                                 .foregroundStyle(.inkMuted)
                             ProgressBarView(progress:0.5)
                                 .padding(.bottom, 4)
-                            ContinueLessonButton{path.append(Screen.LessonPageView)}
+                            ContinueLessonButton{path.append(Screen.LessonPage)}
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     }
@@ -161,7 +161,7 @@ struct HomepageView: View {
                 
                 }
                 .background(Color.paper.ignoresSafeArea())
-                .navigationDestination(for: String.self) { currentLesson in LessonPageView(lessonId: currentLesson)}
+                .navigationDestination(for: String.self) { currentLesson in LessonPage(lessonId: currentLesson)}
                 
             }
             
@@ -171,5 +171,5 @@ struct HomepageView: View {
 
 
 #Preview {
-    HomepageView()
+    Homepage()
 }

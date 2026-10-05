@@ -46,11 +46,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		04395AAB300AB66F00A8B304 /* Services */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Services;
-			sourceTree = "<group>";
-		};
 		04395AB0300AB66F00A8B304 /* Views */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Views;
@@ -59,6 +54,11 @@
 		045F3F9430380287007CB51D /* Resources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		04BE27CB30737EAB001BA6E8 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -77,13 +77,13 @@
 		047AAE0E2F14B7D0004B49CE = {
 			isa = PBXGroup;
 			children = (
+				04BE27CB30737EAB001BA6E8 /* Services */,
 				045F3FA2303820A3007CB51D /* .gitignore */,
 				045F3FA030381AAC007CB51D /* Info.plist */,
 				045F3F9430380287007CB51D /* Resources */,
 				047AAE182F14B7D0004B49CE /* Products */,
 				04395AA7300AB66F00A8B304 /* .claude */,
 				04395AAA300AB66F00A8B304 /* Models */,
-				04395AAB300AB66F00A8B304 /* Services */,
 				04395AB0300AB66F00A8B304 /* Views */,
 				04395A8930054BA200A8B304 /* Assets.xcassets */,
 				04395AA23006905B00A8B304 /* CLAUDE.md */,
@@ -122,9 +122,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				04395AAA300AB66F00A8B304 /* Models */,
-				04395AAB300AB66F00A8B304 /* Services */,
 				04395AB0300AB66F00A8B304 /* Views */,
 				045F3F9430380287007CB51D /* Resources */,
+				04BE27CB30737EAB001BA6E8 /* Services */,
 			);
 			name = Scaffld;
 			packageProductDependencies = (

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LessonPageView: View {
+struct LessonPage: View {
     
     let lessonId: String
     

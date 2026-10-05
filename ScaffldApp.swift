@@ -23,8 +23,7 @@ struct ScaffldApp: App {
     var body: some Scene {
         WindowGroup {
 
-            HomepageView()
-
+            Homepage()
 
         }
         
