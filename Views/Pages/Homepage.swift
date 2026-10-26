@@ -80,77 +80,36 @@ struct Homepage: View {
                     
                     VStack(alignment: .leading) {
                         
-                        HStack{
-                            LessonNumber(lessonNumber: 1)
-                            VStack (alignment: .leading) {
-                                Text("Greetings")
-                                    .font(.custom("Newsreader14pt-Medium", size: 20))
-                                    .fontWeight(.medium)
-                                    .foregroundStyle(.ink)
+                        ForEach(Lesson.lessons){ lesson in
+                            HStack{
+                                LessonNumber(lessonNumber: lesson.id)
+                                VStack (alignment: .leading) {
+                                    Text(lesson.title)
+                                        .font(.custom("Newsreader14pt-Medium", size: 20))
+                                        .fontWeight(.medium)
+                                        .foregroundStyle(.ink)
+                                    
+                                    Text(lesson.status.label)
+                                        .font(.custom("Newsreader14pt-Regular", size:15))
+                                        .fontWeight(.regular)
+                                        .foregroundStyle(.inkMuted)
+                                }
+                                .frame(maxHeight:100)
                                 
-                                Text(isLocked ? "Locked" : "In progress")
-                                    .font(.custom("Newsreader14pt-Regular", size:15))
-                                    .fontWeight(.regular)
-                                    .foregroundStyle(.inkMuted)
-                            }
-                            .frame(maxHeight:100)
-                            
-                            Spacer()
-                            
-                            LessonStatusIcon(isLocked: false)
-                            
-                            //Hstack ending
-                            }
-                            .frame(maxWidth: 350)
-                            .padding(.bottom, 15)
-                            
-                        HStack{
-                            LessonNumber(lessonNumber: 2)
-                            VStack (alignment: .leading) {
-                                Text("Family & People")
-                                    .font(.custom("Newsreader14pt-Medium", size: 20))
-                                    .fontWeight(.medium)
-                                    .foregroundStyle(.ink)
+                                Spacer()
                                 
-                                Text(isLocked ? "Locked" : "In progress")
-                                    .font(.custom("Newsreader14pt-Regular", size:15))
-                                    .fontWeight(.regular)
-                                    .foregroundStyle(.inkMuted)
-                            }
-                            .frame(maxHeight:100)
+                                LessonStatusIcon(isLocked:lesson.status == .locked)
+                
+                                //Hstack ending
+                                }
+                                .frame(maxWidth: 350)
+                                .padding(.bottom, 15)
                             
-                            Spacer()
+                        }
                             
-                            LessonStatusIcon(isLocked: true)
-                            
-                            //Hstack ending
-                            }
-                            .frame(maxWidth: 350)
-                            .padding(.bottom, 15)
+
                         
-                        HStack{
-                            LessonNumber(lessonNumber: 3)
-                            VStack (alignment: .leading) {
-                                Text("Food & Drink")
-                                    .font(.custom("Newsreader14pt-Medium", size: 20))
-                                    .fontWeight(.medium)
-                                    .foregroundStyle(.ink)
-                                
-                                Text(isLocked ? "Locked" : "In progress")
-                                    .font(.custom("Newsreader14pt-Regular", size:15))
-                                    .fontWeight(.regular)
-                                    .foregroundStyle(.inkMuted)
-                            }
-                            .frame(maxHeight:100)
-                            
-                            Spacer()
-                            
-                            LessonStatusIcon(isLocked: true)
-                            
-                            //Hstack ending
-                            }
-                            .frame(maxWidth: 350)
-                            .padding(.bottom, 15)
+
                     }
                     
 
