@@ -15,3 +15,7 @@ struct LessonPage: View {
         Text("Hello Welcome back to the \(lessonId)")
     }
 }
+
+#Preview {
+    LessonPage(lessonId: "2");
+}
