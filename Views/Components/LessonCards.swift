@@ -7,16 +7,17 @@
 
 import SwiftUI
 
-struct LessonCardView: View{
-    var isLocked: Bool = false
-    let CurrentLesson: String
+struct LessonCards: View{
+    var isLocked: Bool
+    let currentLesson: String
+    let lessonNumber: Int
     
     
     var body: some View {
         HStack{
-            LessonNumber(lessonNumber: 1, isLocked: false)
+            LessonNumber(lessonNumber: lessonNumber, isLocked:isLocked)
             VStack (alignment: .leading) {
-                Text(CurrentLesson)
+                Text(currentLesson)
                     .font(.custom("Newsreader14pt-Medium", size: 20))
                     .fontWeight(.medium)
                     .foregroundStyle(.ink)
@@ -26,11 +27,9 @@ struct LessonCardView: View{
                     .fontWeight(.regular)
                     .foregroundStyle(.inkMuted)
             }
-            .frame(maxWidth: 100, maxHeight: 100)
+            .frame(maxWidth: .infinity, alignment: .leading)
             
-            Spacer()
-            
-            LessonStatusIcon(isLocked: false)
+            LessonStatusIcon(isLocked: isLocked)
             
             //Hstack ending
             }
@@ -40,6 +39,3 @@ struct LessonCardView: View{
     
 }
 
-#Preview {
-    LessonCardView(isLocked: true, CurrentLesson: "Greetings")
-}

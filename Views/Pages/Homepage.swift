@@ -15,9 +15,6 @@ enum Screen: Hashable {
 struct Homepage: View {
     
     @State private var path = NavigationPath()
-    @State private var lessonNumber: Int = 0
-    @State private var isLocked: Bool = true
-    @State private var inProgress: Bool = false
     
     
     var body: some View {
@@ -81,34 +78,8 @@ struct Homepage: View {
                     VStack(alignment: .leading) {
                         
                         ForEach(Lesson.lessons){ lesson in
-                            HStack{
-                                LessonNumber(lessonNumber: lesson.id)
-                                VStack (alignment: .leading) {
-                                    Text(lesson.title)
-                                        .font(.custom("Newsreader14pt-Medium", size: 20))
-                                        .fontWeight(.medium)
-                                        .foregroundStyle(.ink)
-                                    
-                                    Text(lesson.status.label)
-                                        .font(.custom("Newsreader14pt-Regular", size:15))
-                                        .fontWeight(.regular)
-                                        .foregroundStyle(.inkMuted)
-                                }
-                                .frame(maxHeight:100)
-                                
-                                Spacer()
-                                
-                                LessonStatusIcon(isLocked:lesson.status == .locked)
-                
-                                //Hstack ending
-                                }
-                                .frame(maxWidth: 350)
-                                .padding(.bottom, 15)
-                            
+                            LessonCards(isLocked: lesson.status == .locked, currentLesson: lesson.title, lessonNumber: lesson.lessonNumber)
                         }
-                            
-
-                        
 
                     }
                     
